@@ -19,7 +19,14 @@ CI (`.github/workflows/build.yml`) runs the build + syntax check on push/PR, ass
 
 ## Status and known risks
 
-Never run on real hardware yet. Riskiest assumption to verify on-Deck first: the `appStore.allApps` field names (`minutes_playtime_forever`, `rt_last_time_played`) — Valve's internal appStore shape is undocumented and changes between client versions.
+Runs on real hardware (2026-07-15): loads and reports stats on the user's
+Deck. The `appStore.allApps` field names (`minutes_playtime_forever`,
+`rt_last_time_played`) worked on that client build, but they're Valve
+internals and can drift between Steam client versions — when they do, the
+panel shows the "fields may have renamed" warning instead of silent zeros
+(keep that diagnostic; it's the only signal). Backend/frontend errors are
+surfaced in the panel, and the snapshot save is awaited before the
+baseline read (ordering was racy).
 
 ## Releasing
 
