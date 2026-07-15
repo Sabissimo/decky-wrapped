@@ -1,5 +1,5 @@
 {
-  "name": "decky-deck-wrapped",
+  "name": "decky-wrapped",
   "version": "0.1.0",
   "description": "Spotify-Wrapped-style playtime stats for your Steam Deck: top games, total hours, and a year-in-review.",
   "type": "module",
