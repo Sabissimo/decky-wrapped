@@ -1,0 +1,11 @@
+{
+  "name": "Deck Wrapped",
+  "author": "Sabissimo",
+  "flags": [],
+  "api_version": 1,
+  "publish": {
+    "tags": ["stats", "playtime", "fun"],
+    "description": "Your Steam Deck year in review: total hours, top games, and playtime trends — tracked locally, Wrapped-style.",
+    "image": "https://opengraph.githubassets.com/1/SteamDeckHomebrew/decky-loader"
+  }
+}
