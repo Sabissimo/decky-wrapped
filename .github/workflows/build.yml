@@ -30,20 +30,20 @@ jobs:
 
       - name: Assemble plugin zip
         run: |
-          mkdir -p out/deck-wrapped/dist
-          cp plugin.json package.json main.py README.md LICENSE out/deck-wrapped/
-          cp dist/index.js out/deck-wrapped/dist/
-          cd out && zip -r deck-wrapped.zip deck-wrapped
+          mkdir -p out/decky-deck-wrapped/dist
+          cp plugin.json package.json main.py README.md LICENSE out/decky-deck-wrapped/
+          cp dist/index.js out/decky-deck-wrapped/dist/
+          cd out && zip -r decky-deck-wrapped.zip decky-deck-wrapped
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: deck-wrapped
-          path: out/deck-wrapped.zip
+          name: decky-deck-wrapped
+          path: out/decky-deck-wrapped.zip
 
       - name: Attach to release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: out/deck-wrapped.zip
+          files: out/decky-deck-wrapped.zip
           generate_release_notes: true
